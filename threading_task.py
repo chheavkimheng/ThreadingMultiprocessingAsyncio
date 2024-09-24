@@ -3,9 +3,11 @@ import time
 import random
 
 def simulate_io_task(file_name, duration):
-    """Simulate downloading or processing a file."""
+    """Simulate downloading or processing a file and create that file."""
     print(f"Starting download simulation for {file_name}...")
-    time.sleep(duration)
+    time.sleep(duration)  # Simulate the download time
+    with open(file_name, 'w') as f:
+        f.write(f"Data for {file_name}\n")  # Write some data to the file
     print(f"Finished downloading {file_name}.")
 
 def run_io_tasks():

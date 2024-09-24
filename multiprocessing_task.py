@@ -21,3 +21,4 @@ def find_primes_in_range(numbers, chunk_size):
         results = pool.map(check_prime_chunk, chunks)
     # Flatten the list of lists and return unique primes
     return list(set(prime for sublist in results for prime in sublist))
+

@@ -8,6 +8,7 @@ async def async_write_to_file(filename, data):
             f.write(f"{number}\n")
     print(f"Finished writing to {filename}.")
 
-async def run_async_tasks(prime_numbers):
-    """Run async tasks to write prime numbers to a file."""
-    await async_write_to_file("primes.txt", prime_numbers)
+async def run_async_tasks(prime_numbers, index):
+    """Run async tasks to write prime numbers to a specific file."""
+    filename = f"primes_{index}.txt"
+    await async_write_to_file(filename, prime_numbers)
